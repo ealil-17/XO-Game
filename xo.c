@@ -4,8 +4,11 @@
 // main function to combine the run all the function.
 
 int main(){
+
+    // Initializing of the variables and the XO tables as an array
+
     char arr[9] = {'0','0','0','0','0','0','0','0','0'};
-    for(int e = 0;e<70;e++){
+    for(int e = 0; e<70 ;e++){
         printf("-");
     }
     printf("!!! XO !!! ");
@@ -14,18 +17,17 @@ int main(){
     }
 
     printf("\nPlayer 1 : X , Player 2 : O\n");
-    int y;
-    y=xo(arr);
-    if(y==0){
-        printf("\nRan successfully");
-    }
+    
+    // Calling the XO game function in the main
+
+    xo(arr);
+    
 }
 
 int xo(char arr[]){
     int n;
     char x;
-    for(int j=0;j<9;j++){
-        printf("\n%d\n",j);
+    for(int j=0;j<9;j++){        
 
         // To check the player who won the game
 
@@ -38,7 +40,7 @@ int xo(char arr[]){
         (arr[0]==arr[4] && arr[4]==arr[8] && arr[8]=='X') || 
         (arr[2]==arr[4] && arr[4]==arr[6] && arr[6]=='X') ){
 
-        printf("\nX WON!!!"); 
+        printf("\nPlayer 1 WON!!!"); 
         return 0;               
        }
     if( (arr[0]==arr[1] && arr[1]==arr[2] && arr[2]=='O') || 
@@ -50,7 +52,7 @@ int xo(char arr[]){
         (arr[0]==arr[4] && arr[4]==arr[8] && arr[8]=='O') || 
         (arr[2]==arr[4] && arr[4]==arr[6] && arr[6]=='O') ){
 
-         printf("\nO WON!!!"); 
+         printf("\nPlayer 2 WON!!!"); 
          return 0;
        }
        
@@ -64,8 +66,12 @@ int xo(char arr[]){
             sum++;
         }
     }
+
+    // print the msg as slots are filled
+
     if(sum==9){
-        printf("SUM");
+        printf("NO slots to play\n");
+        printf("It is a Tie");
         return 0;
     }
     
@@ -83,7 +89,20 @@ int xo(char arr[]){
 
     printf("\nPlayer %c \nEnter the slot number: ",x);
     scanf("%d",&n);
-    arr[n]=x;
+
+    // TO check and prevent the overwriting of the filled slots.
+
+    if(arr[n]!='0'){
+        printf("FOAL : This slot is already filled.\n");
+        printf("Round played by next player.\n");
+        
+    }
+    else  {
+        arr[n]=x;
+    }
+    
+    // Print the table
+
     for(int k=1;k<10;k++){
     printf("%c ",arr[k-1]);
     if(k%3==0){
