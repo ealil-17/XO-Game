@@ -29,18 +29,31 @@ int xo(char arr[]){
 
         // To check the player who won the game
 
-    if((arr[0]==arr[1] && arr[1]==arr[2]) || (arr[0]==arr[3] && arr[3]==arr[6]) || (arr[1]==arr[4] && arr[4]==arr[7]) || (arr[3]==arr[4] && arr[4]==arr[5]) || (arr[2]==arr[5] && arr[5]==arr[8]) || (arr[6]==arr[7] && arr[7]==arr[8]) || (arr[0]==arr[4] && arr[4]==arr[8]) || (arr[2]==arr[4] && arr[4]==arr[6]) ){
-       if(arr[4] == 'X'){
+    if( (arr[0]==arr[1] && arr[1]==arr[2] && arr[2]=='X') || 
+        (arr[0]==arr[3] && arr[3]==arr[6] && arr[6]=='X') || 
+        (arr[1]==arr[4] && arr[4]==arr[7] && arr[7]=='X') || 
+        (arr[3]==arr[4] && arr[4]==arr[5] && arr[5]=='X') || 
+        (arr[2]==arr[5] && arr[5]==arr[8] && arr[8]=='X') || 
+        (arr[6]==arr[7] && arr[7]==arr[8] && arr[8]=='X') || 
+        (arr[0]==arr[4] && arr[4]==arr[8] && arr[8]=='X') || 
+        (arr[2]==arr[4] && arr[4]==arr[6] && arr[6]=='X') ){
+
         printf("\nX WON!!!"); 
         return 0;               
        }
-       else if(arr[4] == 'O'){
+    if( (arr[0]==arr[1] && arr[1]==arr[2] && arr[2]=='O') || 
+        (arr[0]==arr[3] && arr[3]==arr[6] && arr[6]=='O') || 
+        (arr[1]==arr[4] && arr[4]==arr[7] && arr[7]=='O') || 
+        (arr[3]==arr[4] && arr[4]==arr[5] && arr[5]=='O') || 
+        (arr[2]==arr[5] && arr[5]==arr[8] && arr[8]=='O') || 
+        (arr[6]==arr[7] && arr[7]==arr[8] && arr[8]=='O') || 
+        (arr[0]==arr[4] && arr[4]==arr[8] && arr[8]=='O') || 
+        (arr[2]==arr[4] && arr[4]==arr[6] && arr[6]=='O') ){
+
          printf("\nO WON!!!"); 
          return 0;
        }
        
-    }
-    
     
     // To check whether all the slots are filled
 
